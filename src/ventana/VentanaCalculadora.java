@@ -15,19 +15,19 @@ import javax.swing.UnsupportedLookAndFeelException;
  * @author Daniel
  */
 public class VentanaCalculadora extends javax.swing.JFrame {
-    private String cadenaNumeros="";
+
+    private String cadenaNumeros = "";
     private double numero1, resultado;
     private String operacion = "nula";
     private boolean activado = true;
-    
-    
+    private boolean punto = true;
+
     public VentanaCalculadora() {
         initComponents();
-        setSize(300,450);
+        setSize(300, 450);
         setLocationRelativeTo(null);
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -113,6 +113,11 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btnRaizCuadrada, gridBagConstraints);
 
         btnDividir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dividir.png"))); // NOI18N
+        btnDividir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDividirActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -122,6 +127,11 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btnDividir, gridBagConstraints);
 
         btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/borrar.png"))); // NOI18N
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 2;
@@ -176,6 +186,11 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btn9, gridBagConstraints);
 
         btnMultiplicar.setText("X");
+        btnMultiplicar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMultiplicarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 3;
@@ -230,6 +245,11 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btn6, gridBagConstraints);
 
         btnRestar.setText("-");
+        btnRestar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRestarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 4;
@@ -298,6 +318,11 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btnSumar, gridBagConstraints);
 
         btnCambiarSigno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/masMenos.png"))); // NOI18N
+        btnCambiarSigno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCambiarSignoActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
@@ -322,6 +347,11 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btn0, gridBagConstraints);
 
         btnPunto.setText(".");
+        btnPunto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPuntoActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 6;
@@ -410,102 +440,191 @@ public class VentanaCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_ConversorDivisasActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-        cadenaNumeros +="1";
+        cadenaNumeros += "1";
         lblNumeros.setText(cadenaNumeros);
-        activado=true;
+        activado = true;
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
         // TODO add your handling code here:
-        cadenaNumeros +="2";
+        cadenaNumeros += "2";
         lblNumeros.setText(cadenaNumeros);
-        activado=true;
+        activado = true;
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
         // TODO add your handling code here:
-        cadenaNumeros +="3";
+        cadenaNumeros += "3";
         lblNumeros.setText(cadenaNumeros);
-        activado=true;
+        activado = true;
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
         // TODO add your handling code here:
-        cadenaNumeros +="4";
+        cadenaNumeros += "4";
         lblNumeros.setText(cadenaNumeros);
-        activado=true;
+        activado = true;
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
-        cadenaNumeros +="5";
+        cadenaNumeros += "5";
         lblNumeros.setText(cadenaNumeros);
-        activado=true;
+        activado = true;
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
-        cadenaNumeros +="6";
+        cadenaNumeros += "6";
         lblNumeros.setText(cadenaNumeros);
-        activado=true;
+        activado = true;
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
-        cadenaNumeros +="7";
+        cadenaNumeros += "7";
         lblNumeros.setText(cadenaNumeros);
-        activado=true;
+        activado = true;
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
-        cadenaNumeros +="8";
+        cadenaNumeros += "8";
         lblNumeros.setText(cadenaNumeros);
-        activado=true;
+        activado = true;
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
-        cadenaNumeros +="9";
+        cadenaNumeros += "9";
         lblNumeros.setText(cadenaNumeros);
-        activado=true;
+        activado = true;
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
         if (cadenaNumeros != "") {
-            cadenaNumeros +="0";
+            cadenaNumeros += "0";
             lblNumeros.setText(cadenaNumeros);
-            activado=true;
+            activado = true;
         }
     }//GEN-LAST:event_btn0ActionPerformed
 
     private void btnSumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumarActionPerformed
-        
-        if (activado==true) {
-            numero1=Double.parseDouble(cadenaNumeros);
-            lblMuestra.setText(cadenaNumeros+ " + ");
-            cadenaNumeros="";
+
+        if (activado == true) {
+            numero1 = Double.parseDouble(cadenaNumeros);
+            lblMuestra.setText(cadenaNumeros + " + ");
+            cadenaNumeros = "";
             //Se define la operacion
-            operacion="sumar";
+            operacion = "sumar";
             //se "deshabilita el btn para que no se pueda sumar sin tener un segundo numero"
-            activado=false;
+            activado = false;
+            punto = true;
         }
-        
-        
     }//GEN-LAST:event_btnSumarActionPerformed
 
     private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
         double numero2;
-        
+
         if (operacion.equals("nula")) {
             lblNumeros.setText(cadenaNumeros);
-            
+
         } else if (operacion.equals("sumar")) {
             numero2 = Double.parseDouble(cadenaNumeros);
             resultado = numero1 + numero2;
             lblNumeros.setText(String.format("%.2f", resultado));
-            cadenaNumeros=String.valueOf(resultado);
-            operacion="nula";
+            cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
+        } else if (operacion.equals("restar")) {
+            numero2 = Double.parseDouble(cadenaNumeros);
+            resultado = numero1 - numero2;
+            lblNumeros.setText(String.format("%.2f", resultado));
+            cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
+        }else if (operacion.equals("multiplicar")) {
+            numero2 = Double.parseDouble(cadenaNumeros);
+            resultado = numero1 * numero2;
+            lblNumeros.setText(String.format("%.2f", resultado));
+            cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
+        }else if (operacion.equals("dividir")) {
+            numero2 = Double.parseDouble(cadenaNumeros);
+            resultado = numero1 / numero2;
+            lblNumeros.setText(String.format("%.2f", resultado));
+            cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
         }
-        
         lblMuestra.setText("");
-        activado=true;
+        activado = true;
     }//GEN-LAST:event_btnIgualActionPerformed
+
+    private void btnPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPuntoActionPerformed
+        // TODO add your handling code here:
+        if (punto == true) {
+            if (cadenaNumeros == "") {
+                cadenaNumeros = "0.";
+            } else {
+                cadenaNumeros += ".";
+            }
+            lblNumeros.setText(cadenaNumeros);
+            punto = false;
+        }
+
+    }//GEN-LAST:event_btnPuntoActionPerformed
+
+    private void btnCambiarSignoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarSignoActionPerformed
+
+        if (cadenaNumeros.charAt(0) != '-') {
+            cadenaNumeros = "-" + cadenaNumeros;
+        } else {
+            cadenaNumeros = cadenaNumeros.substring(1, cadenaNumeros.length());
+        }
+        lblNumeros.setText(cadenaNumeros);
+    }//GEN-LAST:event_btnCambiarSignoActionPerformed
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        //Primeramente se comprueba el tamaño de la cadena 
+        int tam = cadenaNumeros.length();
+        if (tam > 0) {
+            cadenaNumeros = cadenaNumeros.substring(0, cadenaNumeros.length() - 1); //se van borrando elementos por la derecha
+            lblNumeros.setText(cadenaNumeros);
+        }
+    }//GEN-LAST:event_btnBorrarActionPerformed
+
+    private void btnRestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestarActionPerformed
+        if (activado == true) {
+            numero1 = Double.parseDouble(cadenaNumeros);
+            lblMuestra.setText(cadenaNumeros + " - ");
+            cadenaNumeros = "";
+            //Se define la operacion
+            operacion = "restar";
+            //se "deshabilita el btn para que no se pueda sumar sin tener un segundo numero"
+            activado = false;
+            punto = true;
+        }
+    }//GEN-LAST:event_btnRestarActionPerformed
+
+    private void btnMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicarActionPerformed
+        if (activado == true) {
+            numero1 = Double.parseDouble(cadenaNumeros);
+            lblMuestra.setText(cadenaNumeros + " x ");
+            cadenaNumeros = "";
+            //Se define la operacion
+            operacion = "multiplicar";
+            //se "deshabilita el btn para que no se pueda sumar sin tener un segundo numero"
+            activado = false;
+            punto = true;
+        }
+    }//GEN-LAST:event_btnMultiplicarActionPerformed
+
+    private void btnDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDividirActionPerformed
+        
+        if (activado == true) {
+            numero1 = Double.parseDouble(cadenaNumeros);
+            lblMuestra.setText(cadenaNumeros + " / ");
+            cadenaNumeros = "";
+            //Se define la operacion
+            operacion = "dividir";
+            //se "deshabilita el btn para que no se pueda sumar sin tener un segundo numero"
+            activado = false;
+            punto = true;
+        }
+    }//GEN-LAST:event_btnDividirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -536,13 +655,13 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         try {
             UIManager.setLookAndFeel("com.jtattoo.plaf.texture.TextureLookAndFeel");
         } catch (ClassNotFoundException ex) {
-           // Logger.getLogger(ventanaCalculadora.class.getName()).log(Level.SEVERE, null, ex);
+            // Logger.getLogger(ventanaCalculadora.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
             //Logger.getLogger(ventanaCalculadora.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
             //Logger.getLogger(ventanaCalculadora.class.getName()).log(Level.SEVERE, null, ex);
         } catch (UnsupportedLookAndFeelException ex) {
-          //  Logger.getLogger(ventanaCalculadora.class.getName()).log(Level.SEVERE, null, ex);
+            //  Logger.getLogger(ventanaCalculadora.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         /* Create and display the form */
