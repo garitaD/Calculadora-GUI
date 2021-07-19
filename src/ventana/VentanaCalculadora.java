@@ -16,6 +16,10 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class VentanaCalculadora extends javax.swing.JFrame {
     private String cadenaNumeros="";
+    private double numero1, resultado;
+    private String operacion = "nula";
+    private boolean activado = true;
+    
     
     public VentanaCalculadora() {
         initComponents();
@@ -280,6 +284,11 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btn3, gridBagConstraints);
 
         btnSumar.setText("+");
+        btnSumar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSumarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 5;
@@ -322,6 +331,11 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btnPunto, gridBagConstraints);
 
         btnIgual.setText("=");
+        btnIgual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIgualActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 6;
@@ -398,60 +412,100 @@ public class VentanaCalculadora extends javax.swing.JFrame {
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         cadenaNumeros +="1";
         lblNumeros.setText(cadenaNumeros);
+        activado=true;
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
         // TODO add your handling code here:
         cadenaNumeros +="2";
         lblNumeros.setText(cadenaNumeros);
+        activado=true;
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
         // TODO add your handling code here:
         cadenaNumeros +="3";
         lblNumeros.setText(cadenaNumeros);
+        activado=true;
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
         // TODO add your handling code here:
         cadenaNumeros +="4";
         lblNumeros.setText(cadenaNumeros);
+        activado=true;
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
         cadenaNumeros +="5";
         lblNumeros.setText(cadenaNumeros);
+        activado=true;
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
         cadenaNumeros +="6";
         lblNumeros.setText(cadenaNumeros);
+        activado=true;
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
         cadenaNumeros +="7";
         lblNumeros.setText(cadenaNumeros);
+        activado=true;
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
         cadenaNumeros +="8";
         lblNumeros.setText(cadenaNumeros);
+        activado=true;
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
         cadenaNumeros +="9";
         lblNumeros.setText(cadenaNumeros);
+        activado=true;
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
-        // TODO add your handling code here:
-        
         if (cadenaNumeros != "") {
             cadenaNumeros +="0";
             lblNumeros.setText(cadenaNumeros);
+            activado=true;
+        }
+    }//GEN-LAST:event_btn0ActionPerformed
+
+    private void btnSumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumarActionPerformed
+        
+        if (activado==true) {
+            numero1=Double.parseDouble(cadenaNumeros);
+            lblMuestra.setText(cadenaNumeros+ " + ");
+            cadenaNumeros="";
+            //Se define la operacion
+            operacion="sumar";
+            //se "deshabilita el btn para que no se pueda sumar sin tener un segundo numero"
+            activado=false;
         }
         
-    }//GEN-LAST:event_btn0ActionPerformed
+        
+    }//GEN-LAST:event_btnSumarActionPerformed
+
+    private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
+        double numero2;
+        
+        if (operacion.equals("nula")) {
+            lblNumeros.setText(cadenaNumeros);
+            
+        } else if (operacion.equals("sumar")) {
+            numero2 = Double.parseDouble(cadenaNumeros);
+            resultado = numero1 + numero2;
+            lblNumeros.setText(String.format("%.2f", resultado));
+            cadenaNumeros=String.valueOf(resultado);
+            operacion="nula";
+        }
+        
+        lblMuestra.setText("");
+        activado=true;
+    }//GEN-LAST:event_btnIgualActionPerformed
 
     /**
      * @param args the command line arguments
