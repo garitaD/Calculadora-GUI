@@ -95,6 +95,11 @@ public class VentanaCalculadora extends javax.swing.JFrame {
 
         btnC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnC.setText("C");
+        btnC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -104,6 +109,11 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btnC, gridBagConstraints);
 
         btnRaizCuadrada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/raizCuadrada.png"))); // NOI18N
+        btnRaizCuadrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRaizCuadradaActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -440,65 +450,106 @@ public class VentanaCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_ConversorDivisasActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-        cadenaNumeros += "1";
+        if (lblNumeros.getText() == "0") {
+            cadenaNumeros = "1";
+        } else {
+            cadenaNumeros += "1";
+        }
+
         lblNumeros.setText(cadenaNumeros);
         activado = true;
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
         // TODO add your handling code here:
-        cadenaNumeros += "2";
+        if (lblNumeros.getText() == "0") {
+            cadenaNumeros = "2";
+        } else {
+            cadenaNumeros += "2";
+        }
         lblNumeros.setText(cadenaNumeros);
         activado = true;
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
         // TODO add your handling code here:
-        cadenaNumeros += "3";
+        if (lblNumeros.getText() == "0") {
+            cadenaNumeros = "3";
+        } else {
+            cadenaNumeros += "3";
+        }
         lblNumeros.setText(cadenaNumeros);
         activado = true;
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
         // TODO add your handling code here:
-        cadenaNumeros += "4";
+        if (lblNumeros.getText() == "0") {
+            cadenaNumeros = "4";
+        } else {
+            cadenaNumeros += "4";
+        }
         lblNumeros.setText(cadenaNumeros);
         activado = true;
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
-        cadenaNumeros += "5";
+        if (lblNumeros.getText() == "0") {
+            cadenaNumeros = "5";
+        } else {
+            cadenaNumeros += "5";
+        }
         lblNumeros.setText(cadenaNumeros);
         activado = true;
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
-        cadenaNumeros += "6";
+        if (lblNumeros.getText() == "0") {
+            cadenaNumeros = "6";
+        } else {
+            cadenaNumeros += "6";
+        }
         lblNumeros.setText(cadenaNumeros);
         activado = true;
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
-        cadenaNumeros += "7";
+        if (lblNumeros.getText() == "0") {
+            cadenaNumeros = "7";
+        } else {
+            cadenaNumeros += "7";
+        }
         lblNumeros.setText(cadenaNumeros);
         activado = true;
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
-        cadenaNumeros += "8";
+        if (lblNumeros.getText() == "0") {
+            cadenaNumeros = "8";
+        } else {
+            cadenaNumeros += "8";
+        }
         lblNumeros.setText(cadenaNumeros);
         activado = true;
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
-        cadenaNumeros += "9";
+        if (lblNumeros.getText() == "0") {
+            cadenaNumeros = "9";
+        } else {
+            cadenaNumeros += "9";
+        }
         lblNumeros.setText(cadenaNumeros);
         activado = true;
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
         if (cadenaNumeros != "") {
-            cadenaNumeros += "0";
+            if (lblNumeros.getText() == "0") {
+                cadenaNumeros = "0";
+            } else {
+                cadenaNumeros += "0";
+            }
             lblNumeros.setText(cadenaNumeros);
             activado = true;
         }
@@ -536,13 +587,13 @@ public class VentanaCalculadora extends javax.swing.JFrame {
             lblNumeros.setText(String.format("%.2f", resultado));
             cadenaNumeros = String.valueOf(resultado);
             operacion = "nula";
-        }else if (operacion.equals("multiplicar")) {
+        } else if (operacion.equals("multiplicar")) {
             numero2 = Double.parseDouble(cadenaNumeros);
             resultado = numero1 * numero2;
             lblNumeros.setText(String.format("%.2f", resultado));
             cadenaNumeros = String.valueOf(resultado);
             operacion = "nula";
-        }else if (operacion.equals("dividir")) {
+        } else if (operacion.equals("dividir")) {
             numero2 = Double.parseDouble(cadenaNumeros);
             resultado = numero1 / numero2;
             lblNumeros.setText(String.format("%.2f", resultado));
@@ -581,7 +632,12 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         //Primeramente se comprueba el tamaño de la cadena 
         int tam = cadenaNumeros.length();
         if (tam > 0) {
-            cadenaNumeros = cadenaNumeros.substring(0, cadenaNumeros.length() - 1); //se van borrando elementos por la derecha
+            if (tam == 1) {
+                cadenaNumeros = "0";
+            } else {
+                cadenaNumeros = cadenaNumeros.substring(0, cadenaNumeros.length() - 1); //se van borrando elementos por la derecha
+            }
+
             lblNumeros.setText(cadenaNumeros);
         }
     }//GEN-LAST:event_btnBorrarActionPerformed
@@ -613,7 +669,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMultiplicarActionPerformed
 
     private void btnDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDividirActionPerformed
-        
+
         if (activado == true) {
             numero1 = Double.parseDouble(cadenaNumeros);
             lblMuestra.setText(cadenaNumeros + " / ");
@@ -625,6 +681,26 @@ public class VentanaCalculadora extends javax.swing.JFrame {
             punto = true;
         }
     }//GEN-LAST:event_btnDividirActionPerformed
+
+    private void btnRaizCuadradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaizCuadradaActionPerformed
+
+        numero1 = Double.parseDouble(cadenaNumeros);
+        lblMuestra.setText("sqrt(" + cadenaNumeros + ")");
+        resultado = Math.sqrt(numero1);
+        lblNumeros.setText(String.format("%.2f", resultado));
+        cadenaNumeros = String.valueOf(resultado);
+        operacion = "nula";
+        punto = true;
+    }//GEN-LAST:event_btnRaizCuadradaActionPerformed
+
+    private void btnCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCActionPerformed
+        lblMuestra.setText("");
+        lblNumeros.setText("0");
+        cadenaNumeros = "";
+        operacion = "nula";
+        activado = true;
+        punto = true;
+    }//GEN-LAST:event_btnCActionPerformed
 
     /**
      * @param args the command line arguments
