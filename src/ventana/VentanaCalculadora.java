@@ -64,7 +64,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         salir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Calculadora");
+        setTitle("Calculadora DGB");
 
         panel.setLayout(new java.awt.GridBagLayout());
 
@@ -151,6 +151,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btnBorrar, gridBagConstraints);
 
         btn7.setBackground(new java.awt.Color(204, 204, 204));
+        btn7.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn7.setText("7");
         btn7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,6 +167,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btn7, gridBagConstraints);
 
         btn8.setBackground(new java.awt.Color(204, 204, 204));
+        btn8.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn8.setText("8");
         btn8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,6 +183,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btn8, gridBagConstraints);
 
         btn9.setBackground(new java.awt.Color(204, 204, 204));
+        btn9.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn9.setText("9");
         btn9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,6 +198,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         gridBagConstraints.weighty = 0.5;
         panel.add(btn9, gridBagConstraints);
 
+        btnMultiplicar.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         btnMultiplicar.setText("X");
         btnMultiplicar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -210,6 +214,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btnMultiplicar, gridBagConstraints);
 
         btn4.setBackground(new java.awt.Color(204, 204, 204));
+        btn4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn4.setText("4");
         btn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,6 +230,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btn4, gridBagConstraints);
 
         btn5.setBackground(new java.awt.Color(204, 204, 204));
+        btn5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn5.setText("5");
         btn5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -240,6 +246,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btn5, gridBagConstraints);
 
         btn6.setBackground(new java.awt.Color(204, 204, 204));
+        btn6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn6.setText("6");
         btn6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -254,6 +261,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         gridBagConstraints.weighty = 0.5;
         panel.add(btn6, gridBagConstraints);
 
+        btnRestar.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         btnRestar.setText("-");
         btnRestar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -269,6 +277,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btnRestar, gridBagConstraints);
 
         btn1.setBackground(new java.awt.Color(204, 204, 204));
+        btn1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn1.setText("1");
         btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -284,6 +293,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btn1, gridBagConstraints);
 
         btn2.setBackground(new java.awt.Color(204, 204, 204));
+        btn2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn2.setText("2");
         btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -299,6 +309,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btn2, gridBagConstraints);
 
         btn3.setBackground(new java.awt.Color(204, 204, 204));
+        btn3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn3.setText("3");
         btn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -313,6 +324,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         gridBagConstraints.weighty = 0.5;
         panel.add(btn3, gridBagConstraints);
 
+        btnSumar.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         btnSumar.setText("+");
         btnSumar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -342,6 +354,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         panel.add(btnCambiarSigno, gridBagConstraints);
 
         btn0.setBackground(new java.awt.Color(204, 204, 204));
+        btn0.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn0.setText("0");
         btn0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -356,6 +369,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         gridBagConstraints.weighty = 0.5;
         panel.add(btn0, gridBagConstraints);
 
+        btnPunto.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         btnPunto.setText(".");
         btnPunto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -370,6 +384,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         gridBagConstraints.weighty = 0.5;
         panel.add(btnPunto, gridBagConstraints);
 
+        btnIgual.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         btnIgual.setText("=");
         btnIgual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -729,7 +744,10 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         }
         //</editor-fold>
         try {
-            UIManager.setLookAndFeel("com.jtattoo.plaf.texture.TextureLookAndFeel");
+            //UIManager.setLookAndFeel("com.jtattoo.plaf.acryl.AcrylLookAndFeel");
+            UIManager.setLookAndFeel("com.jtattoo.plaf.aluminium.AluminiumLookAndFeel");
+            //UIManager.setLookAndFeel("com.jtattoo.plaf.hifi.HiFiLookAndFeel");
+            //UIManager.setLookAndFeel("com.jtattoo.plaf.texture.TextureLookAndFeel");
         } catch (ClassNotFoundException ex) {
             // Logger.getLogger(ventanaCalculadora.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
