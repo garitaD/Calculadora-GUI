@@ -13,15 +13,16 @@ import javax.swing.UnsupportedLookAndFeelException;
  * @author Daniel
  */
 public class VentanaDivisas extends javax.swing.JFrame {
-    
-    private String divisa1="";
-    private String divisa2="";
-    private String cantidad="";
-    
-       
+
+    private String divisa1 = "";
+    private String divisa2 = "";
+    private String cantidad = "";
+    private double dinero, cambio;
+    private boolean punto = true;
+
     public VentanaDivisas() {
         initComponents();
-        setSize(300,450);
+        setSize(300, 450);
         setLocationRelativeTo(null);
     }
 
@@ -154,6 +155,11 @@ public class VentanaDivisas extends javax.swing.JFrame {
 
         btnC.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btnC.setText("C");
+        btnC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
@@ -164,6 +170,11 @@ public class VentanaDivisas extends javax.swing.JFrame {
         panel.add(btnC, gridBagConstraints);
 
         btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/borrar.png"))); // NOI18N
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
@@ -314,6 +325,11 @@ public class VentanaDivisas extends javax.swing.JFrame {
         panel.add(btn0, gridBagConstraints);
 
         btnPunto.setText(".");
+        btnPunto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPuntoActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 8;
@@ -380,84 +396,206 @@ public class VentanaDivisas extends javax.swing.JFrame {
 
     private void cbDivisas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbDivisas1ActionPerformed
         divisa1 = (String) cbDivisas1.getSelectedItem();
-        
-        if (divisa1.equals("Estados Unidos - Dolar")){
+
+        if (divisa1.equals("Estados Unidos - Dolar")) {
             lblDivisa1.setText("$");
-            
-        }else if (divisa1.equals("Costa Rica - Colon")) {
+
+        } else if (divisa1.equals("Costa Rica - Colon")) {
             lblDivisa1.setText("₡");
-            
-        }else if (divisa1.equals("Europa - Euro")) {
+
+        } else if (divisa1.equals("Europa - Euro")) {
             lblDivisa1.setText("€");
         }
-        
+        obtenerDinero();
     }//GEN-LAST:event_cbDivisas1ActionPerformed
 
     private void cbDivisas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbDivisas2ActionPerformed
         divisa2 = (String) cbDivisas2.getSelectedItem();
-        
-        if (divisa2.equals("Estados Unidos - Dolar")){
+
+        if (divisa2.equals("Estados Unidos - Dolar")) {
             lblDivisa2.setText("$");
-            
-        }else if (divisa2.equals("Costa Rica - Colon")) {
+
+        } else if (divisa2.equals("Costa Rica - Colon")) {
             lblDivisa2.setText("₡");
-            
-        }else if (divisa2.equals("Europa - Euro")) {
+
+        } else if (divisa2.equals("Europa - Euro")) {
             lblDivisa2.setText("€");
         }
+        obtenerDinero();
     }//GEN-LAST:event_cbDivisas2ActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-        cantidad +="1";
+        if (lblCambio1.getText() == "0") {
+            cantidad = "1";
+        } else {
+            cantidad += "1";
+        }
         lblCambio1.setText(cantidad);
+        obtenerDinero();
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
-        cantidad +="2";
+        if (lblCambio1.getText() == "0") {
+            cantidad = "2";
+        } else {
+            cantidad += "2";
+        }
         lblCambio1.setText(cantidad);
+        obtenerDinero();
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
-        cantidad +="3";
+        if (lblCambio1.getText() == "0") {
+            cantidad = "3";
+        } else {
+            cantidad += "3";
+        }
         lblCambio1.setText(cantidad);
+        obtenerDinero();
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
-        cantidad +="4";
+        if (lblCambio1.getText() == "0") {
+            cantidad = "4";
+        } else {
+            cantidad += "4";
+        }
         lblCambio1.setText(cantidad);
+        obtenerDinero();
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
-        cantidad +="5";
+        if (lblCambio1.getText() == "0") {
+            cantidad = "5";
+        } else {
+            cantidad += "5";
+        }
         lblCambio1.setText(cantidad);
+        obtenerDinero();
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
-        cantidad +="6";
+        if (lblCambio1.getText() == "0") {
+            cantidad = "6";
+        } else {
+            cantidad += "6";
+        }
         lblCambio1.setText(cantidad);
+        obtenerDinero();
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
-        cantidad +="7";
+        if (lblCambio1.getText() == "0") {
+            cantidad = "7";
+        } else {
+            cantidad += "7";
+        }
         lblCambio1.setText(cantidad);
+        obtenerDinero();
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
-        cantidad +="8";
+        if (lblCambio1.getText() == "0") {
+            cantidad = "8";
+        } else {
+            cantidad += "8";
+        }
         lblCambio1.setText(cantidad);
+        obtenerDinero();
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
-        cantidad +="9";
+        if (lblCambio1.getText() == "0") {
+            cantidad = "9";
+        } else {
+            cantidad += "9";
+        }
         lblCambio1.setText(cantidad);
+        obtenerDinero();
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
-        if (cantidad!="") {
-            cantidad +="0";
+        if (cantidad != "") {
+            if (lblCambio1.getText() == "0") {
+                cantidad = "0";
+            } else {
+                cantidad += "0";
+            }
             lblCambio1.setText(cantidad);
+            obtenerDinero();
         }
     }//GEN-LAST:event_btn0ActionPerformed
+
+    private void btnPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPuntoActionPerformed
+        if (punto == true) {
+            
+            if (cantidad == "") {
+                cantidad = "0.";
+            } else {
+                cantidad += ".";
+            }
+            lblCambio1.setText(cantidad);
+            punto=false;
+        }
+            
+
+    }//GEN-LAST:event_btnPuntoActionPerformed
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        int tam= cantidad.length();
+        
+        if (tam>0) {
+            if (tam==1) {
+                cantidad="0";
+                
+            }else{
+                cantidad=cantidad.substring(0,cantidad.length()-1);
+            }
+            lblCambio1.setText(cantidad);
+            obtenerDinero();
+        }
+        
+    }//GEN-LAST:event_btnBorrarActionPerformed
+
+    private void btnCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCActionPerformed
+        cantidad="";
+        punto=true;
+        lblCambio1.setText("0");
+        lblCambio2.setText("0");
+    }//GEN-LAST:event_btnCActionPerformed
+
+    private void obtenerDinero() {
+        cantidad = lblCambio1.getText();
+        dinero = Double.parseDouble(cantidad);
+        cambioDivisas();
+        dinero *= cambio;
+        lblCambio2.setText(String.format("%.2f", dinero));
+    }
+
+    private void cambioDivisas() {
+        if (divisa1.equals(divisa2)) {
+            cambio = 1;
+
+        } else if (divisa1.equals("Estados Unidos - Dolar") && divisa2.equals("Costa Rica - Colon")) {
+            cambio = 625;
+
+        } else if (divisa1.equals("Estados Unidos - Dolar") && divisa2.equals("Europa - Euro")) {
+            cambio = 0.85;
+
+        } else if (divisa1.equals("Costa Rica - Colon") && divisa2.equals("Estados Unidos - Dolar")) {
+            cambio = 0.0016;
+
+        } else if (divisa1.equals("Costa Rica - Colon") && divisa2.equals("Europa - Euro")) {
+            cambio = 0.0014;
+
+        } else if (divisa1.equals("Europa - Euro") && divisa2.equals("Estados Unidos - Dolar")) {
+            cambio = 1.18;
+
+        } else if (divisa1.equals("Europa - Euro") && divisa2.equals("Costa Rica - Colon")) {
+            cambio = 730.34;
+
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -488,13 +626,13 @@ public class VentanaDivisas extends javax.swing.JFrame {
         try {
             UIManager.setLookAndFeel("com.jtattoo.plaf.texture.TextureLookAndFeel");
         } catch (ClassNotFoundException ex) {
-           // Logger.getLogger(ventanaCalculadora.class.getName()).log(Level.SEVERE, null, ex);
+            // Logger.getLogger(ventanaCalculadora.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
             //Logger.getLogger(ventanaCalculadora.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
             //Logger.getLogger(ventanaCalculadora.class.getName()).log(Level.SEVERE, null, ex);
         } catch (UnsupportedLookAndFeelException ex) {
-          //  Logger.getLogger(ventanaCalculadora.class.getName()).log(Level.SEVERE, null, ex);
+            //  Logger.getLogger(ventanaCalculadora.class.getName()).log(Level.SEVERE, null, ex);
         }
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
